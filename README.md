@@ -62,16 +62,24 @@ This is **Week 11** of my Month 3 DevSecOps roadmap.
 ```
 vuln-management-demo/
  ├── app/
- │    ├── package.json / requirements.txt
- │    └── Dockerfile
- ├── pipeline/
- │    └── vulnerability-pipeline.yml
+ │    ├── package.json (Node.js dependencies)
+ │    ├── requirements.txt (Python dependencies)
+ │    ├── index.js (Express API server)
+ │    └── Dockerfile (Container build instructions)
  ├── .github/
- │    └── dependabot.yml
+ │    ├── dependabot.yml (Automated dependency updates)
+ │    └── workflows/
+ │         └── vulnerability-pipeline.yml (CI/CD security pipeline)
+ ├── scripts/
+ │    ├── local-scan.sh (Run scans locally)
+ │    └── install-trivy.sh (Install Trivy scanner)
  ├── docs/
- │    └── vulnerability_workflow.md
+ │    ├── vulnerability_workflow.md (Technical workflow docs)
+ │    └── JUNIOR_DEVSECOPS_GUIDE.md (Beginner-friendly guide)
  └── README.md
 ```
+
+**Note:** Workflows are in `.github/workflows/` because that's where GitHub Actions **requires** them to be. See [`docs/FOLDER_STRUCTURE_EXPLAINED.md`](docs/FOLDER_STRUCTURE_EXPLAINED.md) for details.
 
 ---
 

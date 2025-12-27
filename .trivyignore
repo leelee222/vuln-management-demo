@@ -1,0 +1,16 @@
+# Trivy Ignore File
+# This file lists vulnerabilities that are intentionally ignored with justification
+
+# CVE-2025-64756 - glob Command Injection
+# Location: npm's internal dependencies (bundled with Node.js)
+# Severity: HIGH
+# Reason for ignoring:
+#   - This vulnerability is in npm's build tooling, not application runtime code
+#   - The vulnerable glob package is used by npm for file operations during install/build
+#   - In containerized environments, the attack surface is minimal (no untrusted user input to npm)
+#   - This will be fixed when Node.js updates their bundled npm version
+#   - Our application code doesn't directly use or depend on this package
+# Risk acceptance: Low risk in production container environment
+# Review date: 2025-12-27
+# Next review: When Node.js 20 updates npm to include glob >= 10.5.0
+CVE-2025-64756
